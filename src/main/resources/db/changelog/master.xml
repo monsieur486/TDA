@@ -9,4 +9,6 @@
     <include file="db/changelog/02-02-contrats_fixtures.sql"/>
     <include file="db/changelog/03-01-create_reunions.sql"/>
     <include file="db/changelog/03-02-reunions_fixtures.sql"/>
+    <include file="db/changelog/04-01-create_parties.sql"/>
+    <include file="db/changelog/04-02-parties_fixtures.sql"/>
 </databaseChangeLog>

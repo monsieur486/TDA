@@ -1,25 +1,35 @@
 package com.mr486.tda.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "parties")
 public class Partie {
 
+    @Id()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long reunionId;
-    private Long amiId;
-    private Long contratId;
-    private Long preneurId;
-    private Long mortId;
-    private Boolean estFait;
-    private Integer point;
 
+    @Column(name = "reunion_id")
+    private Long reunionId;
+    @Column(name = "contrat_id")
+    private Long contratId;
+    @Column(name = "preneur_id")
+    private Long preneurId;
+    @Column(name = "appel_id")
+    private Long appelId;
+    @Column(name = "mort_id")
+    private Long mortId;
+    @Column(name = "est_fait")
+    private Boolean estFait;
+    private Integer points;
+    @Column(name = "petit_au_bout_id")
     private Long petitAuBoutId;
     private Boolean chelem;
     private Boolean capot;
