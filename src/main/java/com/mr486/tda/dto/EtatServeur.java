@@ -14,10 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class EtatServeur {
+    private Long reunionId;
     private Integer status;
     private Integer nbJoueurs;
-    private List<JoueurInscrit> joueurs;
-    private List<ContratDetail> contrats;
     private List<ScoreJoueur> scoreJoueurs;
     private DataGraphique dataGraphique;
     private List<String> detailsParties;
