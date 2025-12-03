@@ -23,8 +23,9 @@ services:
       SPRING_PROFILES_ACTIVE: docker
       APP_USERNAME: ${APP_USERNAME:-app_user}
       APP_PASSWORD: ${APP_PASSWORD:-app_pass}
+      APP_ALLOWED_ORIGINS: ${APP_ALLOWED_ORIGINS:-https://tda.mr486.com}
     ports:
-      - "9001:9001"
+      - "127.0.0.1:9001:9001"
 
 volumes:
   tda_db_data:
