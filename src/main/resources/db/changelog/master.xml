@@ -11,4 +11,6 @@
     <include file="db/changelog/03-02-reunions_fixtures.sql"/>
     <include file="db/changelog/04-01-create_parties.sql"/>
     <include file="db/changelog/04-02-parties_fixtures.sql"/>
+    <include file="db/changelog/05-01-create_joueurs.sql"/>
+    <include file="db/changelog/05-02-joueurs_fixtures.sql"/>
 </databaseChangeLog>

@@ -1,7 +1,5 @@
 package com.mr486.tda.dto;
 
-import com.mr486.tda.model.Ami;
-import com.mr486.tda.model.Contrat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,8 +16,8 @@ import java.util.List;
 public class EtatServeur {
     private Integer status;
     private Integer nbJoueurs;
-    private List<Ami> joueurs;
-    private List<Contrat> contrats;
+    private List<JoueurInscrit> joueurs;
+    private List<ContratDetail> contrats;
     private List<ScoreJoueur> scoreJoueurs;
     private DataGraphique dataGraphique;
     private List<String> detailsParties;
