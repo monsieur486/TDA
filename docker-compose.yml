@@ -1,0 +1,30 @@
+services:
+
+  tda-db:
+    image: postgres:16
+    container_name: tda-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-tdadb}
+      POSTGRES_USER: ${POSTGRES_USER:-tdadb_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-tdadb_pass}
+    ports:
+      - "5432:5432"
+    volumes:
+      - tda_db_data:/var/lib/postgresql/data
+
+  tda-webclient:
+    build:
+      dockerfile: Dockerfile
+    profiles: [ "fullstack" ]
+    container_name: tda-webclient
+    depends_on:
+      - tda-db
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      APP_USERNAME: ${APP_USERNAME:-app_user}
+      APP_PASSWORD: ${APP_PASSWORD:-app_pass}
+    ports:
+      - "9001:9001"
+
+volumes:
+  tda_db_data:

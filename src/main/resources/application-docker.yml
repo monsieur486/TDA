@@ -1,0 +1,27 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+
+  application:
+    name: tda-webclient
+
+  datasource:
+    url: jdbc:postgresql://tda-db:5432/${POSTGRES_DB:tdadb}
+    username: ${POSTGRES_USER:tdadb_user}
+    password: ${POSTGRES_PASSWORD:tdadb_pass}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    change-log: classpath:db/changelog/master.xml
+
+security:
+  app-user:
+    username: ${APP_USERNAME:app_user}
+    password: ${APP_PASSWORD:app_password}
+
+server:
+  port: 9001
