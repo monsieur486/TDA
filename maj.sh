@@ -1,3 +1,3 @@
-docker compose down
+docker compose --profile fullstack down
 git pull
-docker compose up -d --build
+docker compose --profile fullstack up -d --build
