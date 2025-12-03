@@ -1,16 +1,23 @@
 package com.mr486.tda.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Component
-@Data
+import java.util.Date;
+
+@Getter
+@Setter
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "reunions")
 public class Reunion {
-    private Long id;
+    @Id()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
+    private Date createdDate;
+    private Boolean cagnotte;
+    private Boolean active;
 }
