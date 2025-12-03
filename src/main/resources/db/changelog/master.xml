@@ -3,6 +3,8 @@
                    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-    <include file="db/changelog/01-create_amis.sql"/>
-    <include file="db/changelog/01-01-amis_fixtures.sql"/>
+    <include file="db/changelog/01-01-create_amis.sql"/>
+    <include file="db/changelog/01-02-amis_fixtures.sql"/>
+    <include file="db/changelog/02-01-create_contrats.sql"/>
+    <include file="db/changelog/02-02-contrats_fixtures.sql"/>
 </databaseChangeLog>
