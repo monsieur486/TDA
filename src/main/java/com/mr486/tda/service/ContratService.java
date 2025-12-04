@@ -17,4 +17,8 @@ public class ContratService {
         return contratRepository.findAll();
     }
 
+    public Contrat getContratById(Long id) {
+        return contratRepository.findById(id).orElseThrow();
+    }
+
 }

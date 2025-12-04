@@ -7,6 +7,8 @@ import com.mr486.tda.persistance.PartieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class PartieService {
@@ -42,5 +44,9 @@ public class PartieService {
             partieForm.setCapot(partie.getCapot());
         }
         return partieForm;
+    }
+
+    public List<Partie> getPartiesByReunionId(Long reunionId) {
+        return partieRepository.findAllByReunionIdOrderByIdAsc(reunionId);
     }
 }
