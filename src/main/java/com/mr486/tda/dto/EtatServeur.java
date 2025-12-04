@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -14,10 +15,10 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class EtatServeur {
-    private Long reunionId;
-    private Integer status;
-    private Integer nbJoueurs;
-    private List<ScoreJoueur> scoreJoueurs;
+    private Long reunionId = 0L;
+    private Integer status = 0;
+    private Integer nbJoueurs = 0;
+    private List<ScoreJoueur> scoreJoueurs = new ArrayList<>();
     private DataGraphique dataGraphique;
-    private List<String> detailsParties;
+    private List<String> detailsParties = new ArrayList<>();
 }
