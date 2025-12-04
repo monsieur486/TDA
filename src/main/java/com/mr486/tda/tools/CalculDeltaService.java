@@ -17,7 +17,6 @@ public class CalculDeltaService {
     private final ContratService contratService;
 
     private Integer calcul4joueurs(Partie partie, Long joueurId) {
-        log.warn("Calculating deltas for 4 joueurs partie id: {} - joueur id: {}", partie.getId(), joueurId);
         int variation = 0;
         if (partie.getContratId() <= 1) {
             return 0;
@@ -26,7 +25,6 @@ public class CalculDeltaService {
     }
 
     private Integer calcul5joueurs(Partie partie, Long joueurId) {
-        log.warn("Calculating deltas for 5 joueurs partie id: {} - joueur id: {}", partie.getId(), joueurId);
         if (partie.getContratId() <= 1) {
             return 0;
         }
@@ -64,30 +62,6 @@ public class CalculDeltaService {
         }
 
         return variation;
-    }
-
-    private Integer getPointsContrat(Partie partie) {
-        Integer points = 0;
-        Contrat contrat = contratService.getContratById(partie.getContratId());
-        if (partie.getContratId() == 1) { // Belge
-            return 0;
-        }
-
-        points = contrat.getPoints();
-        points += partie.getPoints();
-
-        if (!partie.getEstFait()) {
-            points = -points;
-        }
-
-        if (Boolean.TRUE.equals(partie.getChelem())) {
-            points = points * 2;
-        }
-
-        if (Boolean.TRUE.equals(partie.getChelem())) {
-            points = points * 2;
-        }
-        return points;
     }
 
     public Integer calculScoreJoueur(List<Partie> parties, int nombreJoueurs, Long amiId) {
