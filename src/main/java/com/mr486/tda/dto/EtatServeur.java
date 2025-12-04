@@ -15,10 +15,12 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class EtatServeur {
-    private Long reunionId = 0L;
+    private Long reunionActiveId = 0L;
     private Integer status = 0;
     private Integer nbJoueurs = 0;
+    private List<JoueurInscrit> joueurs = new ArrayList<>();
     private List<ScoreJoueur> scoreJoueurs = new ArrayList<>();
     private DataGraphique dataGraphique;
     private List<String> detailsParties = new ArrayList<>();
+    private PartieForm partieForm;
 }

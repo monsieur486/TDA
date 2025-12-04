@@ -33,4 +33,5 @@ public class Partie {
     private Long petitAuBoutId;
     private Boolean chelem;
     private Boolean capot;
+    private Boolean edit;
 }

@@ -12,13 +12,14 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Builder
 public class PartieForm {
-    private Long contratId;
-    private Long preneurId;
-    private Long appelId;
-    private Long mortId;
-    private Boolean estFait;
-    private Integer point;
-    private Long petitAuBoutId;
-    private Boolean chelem;
-    private Boolean capot;
+    private Long id = 0L;
+    private Long contratId = 0L;
+    private Long preneurId = 0L;
+    private Long appelId = 0L;
+    private Long mortId = 0L;
+    private Boolean estFait = false;
+    private Integer point = 0;
+    private Long petitAuBoutId = 0L;
+    private Boolean chelem = false;
+    private Boolean capot = false;
 }

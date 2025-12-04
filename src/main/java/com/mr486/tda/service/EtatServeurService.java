@@ -12,12 +12,13 @@ public class EtatServeurService {
 
     private final ReunionService reunionService;
     private final JoueurService joueurService;
+    private final PartieService partieService;
 
     public EtatServeur getEtatServeur() {
         EtatServeur etatServeur = new EtatServeur();
         DataGraphique dataGraphique = new DataGraphique();
         Long reunionId = reunionService.getReunionIdActive();
-        etatServeur.setReunionId(reunionId);
+        etatServeur.setReunionActiveId(reunionId);
         etatServeur.setDataGraphique(dataGraphique);
         if(reunionId >0){
             Reunion reunion = reunionService.getReunionActive();
@@ -27,7 +28,9 @@ public class EtatServeurService {
                 etatServeur.setStatus(1);
             }
             etatServeur.setNbJoueurs(joueurService.getJoueursInscrits().size());
+            etatServeur.setJoueurs(joueurService.getJoueursInscrits());
         }
+        etatServeur.setPartieForm(partieService.getPartieForm());
         return etatServeur;
     }
 

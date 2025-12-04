@@ -10,4 +10,5 @@ points INTEGER,
 petit_au_bout_id BIGINT,
 chelem BOOLEAN,
 capot BOOLEAN,
+edit BOOLEAN,
 CONSTRAINT pk_parties PRIMARY KEY (id));
